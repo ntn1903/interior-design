@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f3ee">
+    <meta name="description" content="Uy Studio — kiến trúc đương đại, gần gũi với thiên nhiên và nhịp sống Việt.">
+    <title>Uy Studio — Kiến trúc & Không gian</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (() => {
+        const saved = localStorage.getItem("nep-theme");
+        const theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Uy Studio, về đầu trang">
+        <span class="brand-mark">u.</span>
+        <span class="brand-name">UY <span>STUDIO</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="#projects">Dự án</a>
+        <a href="#about">Studio</a>
+        <a href="#contact">Liên hệ</a>
+        <button class="theme-toggle" type="button" aria-label="Chuyển giao diện sáng tối">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.6 8.6 0 0 1 8.7 3.8 8.8 8.8 0 1 0 20.2 15.3Z"></path></svg>
+          <span class="theme-label">Giao diện tối</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-image" role="img" aria-label="Ngôi nhà đương đại nép mình bên tán cây xanh"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span></span> KIẾN TRÚC · NỘI THẤT · CẢNH QUAN</p>
+          <h1>Không gian<br>để <em>trở về.</em></h1>
+          <p class="hero-intro">Chúng tôi tạo nên những không gian sống chậm, nơi kiến trúc lắng nghe con người và thiên nhiên.</p>
+          <a class="button button-light" href="#projects">Khám phá dự án <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-foot">
+          <span>THÀNH PHỐ HỒ CHÍ MINH · VIỆT NAM</span>
+          <span>10°46' N — 106°42' E</span>
+          <a href="#about" aria-label="Cuộn xuống">CUỘN ĐỂ KHÁM PHÁ <span>↓</span></a>
+        </div>
+      </section>
+
+      <section class="intro section-wrap" id="about">
+        <div class="section-index">01 <span>—</span> VỀ UY</div>
+        <div class="intro-content">
+          <p class="eyebrow">KIẾN TRÚC CÓ CHỦ ĐÍCH</p>
+          <h2>Ít hơn, nhưng<br><em>đúng hơn.</em></h2>
+          <div class="intro-bottom">
+            <p>Uy là studio kiến trúc độc lập tại Sài Gòn. Chúng tôi tin rằng một không gian tốt không cần lên tiếng — nó chỉ cần khiến bạn cảm thấy mình thuộc về nơi đó.</p>
+            <a class="text-link" href="#contact">Tìm hiểu về studio <span>↗</span></a>
+          </div>
+        </div>
+        <div class="intro-visual">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85" alt="Ánh nắng nhẹ trong không gian nội thất tối giản" loading="lazy">
+          <span class="image-note">ÁNH SÁNG TỰ NHIÊN · VẬT LIỆU THẬT</span>
+        </div>
+      </section>
+
+      <section class="projects section-wrap" id="projects">
+        <div class="projects-heading">
+          <div>
+            <div class="section-index">02 <span>—</span> TUYỂN CHỌN</div>
+            <h2>Không gian<br><em>được kể lại.</em></h2>
+          </div>
+          <p class="projects-lede">Mỗi công trình bắt đầu bằng một câu hỏi. Đây là những câu trả lời của chúng tôi.</p>
+        </div>
+        <div class="project-toolbar">
+          <div class="filters" role="group" aria-label="Lọc dự án theo loại">
+            <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">Tất cả <span>06</span></button>
+            <button class="filter-button" type="button" data-filter="residential" aria-pressed="false">Nhà ở</button>
+            <button class="filter-button" type="button" data-filter="interior" aria-pressed="false">Nội thất</button>
+            <button class="filter-button" type="button" data-filter="commercial" aria-pressed="false">Thương mại</button>
+            <button class="filter-button" type="button" data-filter="renovation" aria-pressed="false">Cải tạo</button>
+          </div>
+          <span class="project-count" aria-live="polite">06 DỰ ÁN</span>
+        </div>
+        <div class="project-grid" id="project-grid"></div>
+        <div class="projects-end"><span>—</span> CÒN NHIỀU CÂU CHUYỆN PHÍA TRƯỚC</div>
+      </section>
+
+      <section class="manifesto">
+        <div class="manifesto-image" role="img" aria-label="Hiên nhà gỗ mở ra khu vườn xanh"></div>
+        <div class="manifesto-copy">
+          <p class="eyebrow">CÁCH CHÚNG TÔI NGHĨ</p>
+          <h2>Kiến trúc bắt đầu<br>từ <em>lắng nghe.</em></h2>
+          <p>Khí hậu, thói quen, ký ức và những điều tưởng như rất nhỏ — tất cả cùng tạo nên một nơi chốn có ý nghĩa.</p>
+          <span class="manifesto-sign">UY STUDIO <span>·</span> TỪ 2016</span>
+        </div>
+      </section>
+
+      <section class="studio section-wrap">
+        <div class="section-index">03 <span>—</span> CÁCH LÀM VIỆC</div>
+        <div class="studio-body">
+          <h2>Thiết kế tốt là<br><em>một cuộc đối thoại.</em></h2>
+          <div class="studio-columns">
+            <p>Từ buổi trò chuyện đầu tiên đến ngày trao chìa khóa, chúng tôi làm việc cùng bạn qua từng quyết định — rõ ràng, chân thành và có trách nhiệm.</p>
+            <div class="studio-facts">
+              <div><strong>09</strong><span>NĂM THỰC HÀNH</span></div>
+              <div><strong>32</strong><span>CÔNG TRÌNH HOÀN THÀNH</span></div>
+              <div><strong>04</strong><span>THÀNH VIÊN CỐT LÕI</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-inner">
+          <div class="section-index">04 <span>—</span> BẮT ĐẦU MỘT CÂU CHUYỆN</div>
+          <div class="contact-content">
+            <div>
+              <p class="eyebrow">BẠN ĐANG ẤP Ủ ĐIỀU GÌ?</p>
+              <h2>Cùng tạo nên<br><em>một nơi chốn.</em></h2>
+            </div>
+            <div class="contact-details">
+              <p>Hãy kể cho chúng tôi nghe về dự định của bạn. Uy luôn sẵn lòng bắt đầu từ một cuộc trò chuyện.</p>
+              <a class="contact-email" href="mailto:hello@uy.studio">hello@uy.studio <span>↗</span></a>
+              <a class="contact-location" href="https://maps.google.com/?q=Ho+Chi+Minh+City" target="_blank" rel="noreferrer">Sài Gòn, Việt Nam <span>↗</span></a>
+              <form class="contact-form" id="contact-form">
+                <label for="contact-message">Hoặc để lại lời nhắn</label>
+                <div class="form-row">
+                  <input id="contact-message" name="message" type="text" placeholder="Tôi đang tìm kiếm..." required>
+                  <button type="submit" aria-label="Gửi lời nhắn">↗</button>
+                </div>
+                <span class="form-note">Thao tác này sẽ mở ứng dụng email của bạn.</span>
+              </form>
+            </div>
+          </div>
+        </div>
+        <footer class="site-footer">
+          <a class="footer-brand" href="#home">u.</a>
+          <span>© 2025 UY STUDIO. THIẾT KẾ CÓ CHỦ ĐÍCH.</span>
+          <a href="#home">VỀ ĐẦU TRANG ↑</a>
+        </footer>
+      </section>
+    </main>
+
+    <dialog class="project-dialog" id="project-dialog" aria-label="Chi tiết dự án">
+      <button class="dialog-close" type="button" aria-label="Đóng chi tiết">×</button>
+      <div class="dialog-content"></div>
+    </dialog>
+    <dialog class="lightbox" id="lightbox" aria-label="Xem ảnh dự án">
+      <button class="lightbox-close" type="button" aria-label="Đóng ảnh">×</button>
+      <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Ảnh trước">←</button>
+      <img alt="">
+      <button class="lightbox-arrow lightbox-next" type="button" aria-label="Ảnh tiếp theo">→</button>
+      <div class="lightbox-caption"></div>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
